@@ -55,7 +55,6 @@
 				CB9CE0752BC449FA005391BA /* Helpers */,
 				CB9CE0742BC449EF005391BA /* Models */,
 				CB9CE0762BC44A16005391BA /* Views */,
-				CB9CE0682BC447D5005391BA /* LandingView.swift */,
 				CB9CE06A2BC447D7005391BA /* Assets.xcassets */,
 				CB9CE06C2BC447D7005391BA /* Preview Content */,
 			);
@@ -87,6 +86,7 @@
 		CB9CE0762BC44A16005391BA /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CB9CE0682BC447D5005391BA /* LandingView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
