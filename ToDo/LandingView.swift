@@ -11,6 +11,12 @@ struct LandingView: View {
     
    // Mark Stored Properties
     
+    // The item currently being added
+    @State var newItemDescription = ""
+    
+   // The search text
+    @State var searchText = ""
+    
     // Mark: Computed Properties
     var body: some View {
         NavigationView {
@@ -24,6 +30,17 @@ struct LandingView: View {
                     Text("Go for a run around campus")
                     
                 }
+                .searchable(text: $searchText)
+                
+                HStack {
+                    TextField("Enter a to-do item",text: $newItemDescription)
+                    
+                    Button("ADD") {
+                        // Add the new to-do item
+                    }
+                    .font(.caption)
+                }
+                .padding(20)
                 
             }
             .navigationTitle("To Do")
