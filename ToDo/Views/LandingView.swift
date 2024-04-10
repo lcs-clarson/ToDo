@@ -9,12 +9,12 @@ import SwiftUI
 
 struct LandingView: View {
     
-   // Mark Stored Properties
+    // Mark Stored Properties
     
     // The item currently being added
     @State var newItemDescription = ""
     
-   // The search text
+    // The search text
     @State var searchText = ""
     
     // The list of to-do items
@@ -29,7 +29,17 @@ struct LandingView: View {
                 List(todos) { todo in
                     
                     ItemView(currentItem: todo)
-
+                    // Delete a to-do item
+                        .swipeActions {
+                            Button(
+                                "Delete",
+                                role: .destructive ,
+                                action: {
+                                    delete(todo)
+                                }
+                            )
+                        }
+                    
                 }
                 .searchable(text: $searchText)
                 
@@ -50,7 +60,7 @@ struct LandingView: View {
             
         }
     }
-
+    
     // Mark : Functions
     func createToDo(withTitle title: String) {
         
@@ -64,6 +74,16 @@ struct LandingView: View {
         todos.append(todo)
         
     }
+    
+    func delete(_ todo: TodoItem) {
+        
+        // Remove the provided to-do item from the array
+        todos.removeAll { currentItem in
+            currentItem.id == todo.id
+        }
+        
+    }
+    
 }
 
 #Preview {
