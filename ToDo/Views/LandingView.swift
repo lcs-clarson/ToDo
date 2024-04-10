@@ -75,7 +75,6 @@ struct LandingView: View {
         todos.append(todo)
         
     }
-    
     func delete(_ todo: TodoItem) {
         
         // Remove the provided to-do item from the array
@@ -87,6 +86,6 @@ struct LandingView: View {
     
 }
 
-#Preview {
-    LandingView()
-}
+//#Preview {
+//    LandingView()
+//}
