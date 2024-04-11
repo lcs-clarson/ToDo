@@ -20,6 +20,7 @@ struct LandingView: View {
     // Access the model context (required to do additions, deletions, updates, et cetera)
     @Environment(\.modelContext) var modelContext
     
+    
     // The list of to-do items
     @Query var todos: [TodoItem]
     
@@ -56,6 +57,9 @@ struct LandingView: View {
                 
             }
             .navigationTitle("To Do")
+            .onAppear {
+                printCommandToOpenDatabaseFile()
+            }
             
         }
     }
